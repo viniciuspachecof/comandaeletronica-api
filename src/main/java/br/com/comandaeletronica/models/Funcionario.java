@@ -7,6 +7,7 @@ package br.com.comandaeletronica.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.List;
 import java.util.UUID;
 import javax.persistence.CascadeType;
@@ -38,6 +39,9 @@ public class Funcionario implements Serializable {
     @NotNull
     @Column(unique = true)
     private String cpf;
+    
+    @Column(name = "data_nascimento")
+    private Calendar dataNascimento;
         
     @NotNull
     private String cargo;
@@ -72,7 +76,15 @@ public class Funcionario implements Serializable {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }        
-    
+
+    public Calendar getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(Calendar dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+            
     public String getCargo() {
         return cargo;
     }

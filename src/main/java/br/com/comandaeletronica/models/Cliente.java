@@ -7,6 +7,7 @@ package br.com.comandaeletronica.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -44,7 +45,7 @@ public class Cliente implements Serializable {
           
     @Temporal(TemporalType.DATE)
     @Column(name = "data_nascimento")
-    private Date dataNascimento;
+    private Calendar dataNascimento;
     
     @NotNull    
     private String cidade;
@@ -80,15 +81,15 @@ public class Cliente implements Serializable {
         this.cpf = cpf;
     }
 
-    
-    
-    public Date getDataNascimento() {
+    public Calendar getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(Calendar dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
+
+     
 
     public String getCidade() {
         return cidade;
