@@ -19,6 +19,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -39,7 +41,8 @@ public class Funcionario implements Serializable {
     @NotNull
     @Column(unique = true)
     private String cpf;
-    
+   
+    @Temporal(TemporalType.DATE)
     @Column(name = "data_nascimento")
     private Calendar dataNascimento;
         
